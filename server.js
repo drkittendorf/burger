@@ -8,12 +8,9 @@ app.use(express.urlencoded({ extended: true }));
 
 
 //set static folder
-// app.use(express.static((path.join(_dirname, "public", "index.html"))));
-//set static folder
 app.use(express.static("public"));
-// app.get("/", (req, res) => {
-//   res.sendFile(path.join(_dirname, "public", "index.html"));
-// });
+
+
 
 // Starts our server.
 app.listen(PORT, () => console.log(`Server started and listening on port ${PORT}`));
