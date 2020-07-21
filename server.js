@@ -1,18 +1,19 @@
 const express = require("express");
-const path = require("path");
+// const path = require("path");
 const app = express();
+// process.env looks at process variables, sets an initial port.
+const PORT = process.env.PORT || 8080;
+
+app.use(express.urlencoded({ extended: true }));
+
+
 //set static folder
-app.use(express.static((path.join(_dirname, "public"))));
-
-// process.env looks at process variables
-const PORT = process.env.PORT || 5000;
-
-
-
-
-
+// app.use(express.static((path.join(_dirname, "public", "index.html"))));
+//set static folder
+app.use(express.static("public"));
+// app.get("/", (req, res) => {
+//   res.sendFile(path.join(_dirname, "public", "index.html"));
+// });
 
 // Starts our server.
-server.listen(PORT, function() {
-    console.log("Server listening on: http://localhost:" + PORT);
-  });
+app.listen(PORT, () => console.log(`Server started and listening on port ${PORT}`));
