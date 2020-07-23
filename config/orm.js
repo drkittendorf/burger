@@ -3,9 +3,6 @@ const connection = require("../config/connection.js");
 
 //    * In the `orm.js` file, create the methods that will execute the necessary MySQL commands in the controllers. These are the methods you will need to use in order to retrieve and store data in your database.
 
-//      * `selectAll()`
-//      * `insertOne()`
-//      * `updateOne()`
 function printQuestionMarks(num) {
     const arr = [];
   
@@ -38,11 +35,11 @@ function printQuestionMarks(num) {
     // translate array of strings to a single comma-separated string
     return arr.toString();
   }
-  
+  //      * `selectAll()`
   // Object for all our SQL statement functions.
   let orm = {
     all: function(tableInput, cb) {
-      var queryString = "SELECT * FROM " + tableInput + ";";
+      const queryString = "SELECT * FROM " + tableInput + ";";
       connection.query(queryString, function(err, result) {
         if (err) {
           throw err;
@@ -51,7 +48,7 @@ function printQuestionMarks(num) {
       });
     },
     create: function(table, cols, vals, cb) {
-      var queryString = "INSERT INTO " + table;
+     const queryString = "INSERT INTO " + table; //     * `insertOne()`
   
       queryString += " (";
       queryString += cols.toString();
@@ -71,8 +68,9 @@ function printQuestionMarks(num) {
       });
     },
     // An example of objColVals would be {name: panther, sleepy: true}
+    //      * `updateOne()`
     update: function(table, objColVals, condition, cb) {
-      var queryString = "UPDATE " + table;
+      const queryString = "UPDATE " + table;
   
       queryString += " SET ";
       queryString += objToSql(objColVals);
@@ -89,7 +87,7 @@ function printQuestionMarks(num) {
       });
     },
     delete: function(table, condition, cb) {
-      var queryString = "DELETE FROM " + table;
+      const queryString = "DELETE FROM " + table;
       queryString += " WHERE ";
       queryString += condition;
   

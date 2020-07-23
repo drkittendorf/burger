@@ -1,14 +1,13 @@
 // 3. Inside the `burgers_controller.js` file, import the following:
-
 //    * Express
-//    * `burger.js`
 const express = require("express");
-const router = express.Router();
-const app = express();
-const expbs = require('express-handlebars');
 
-// Create all our routes and set up logic within those routes where required.
+//import the following: `burger.js` to use its database functions.
 const burger = require("../models/burger.js");
+const router = express.Router();
+// const app = express();
+// const hbs = require('express-handlebars');
+
 
 // Create all our routes and set up logic within those routes where required.
 router.get("/", function(req, res) {
@@ -22,7 +21,7 @@ router.get("/", function(req, res) {
 });
 
 router.post("/api/burgers", function(req, res) {
-  cat.create([
+  burger.create([
     "name", "devoured"
   ], [
     req.body.name, req.body.devoured
@@ -37,7 +36,7 @@ router.put("/api/burgers/:id", function(req, res) {
 
   console.log("condition", condition);
 
-  cat.update({
+  burger.update({
     devoured: req.body.devoured
   }, condition, function(result) {
     if (result.changedRows == 0) {
@@ -61,12 +60,6 @@ router.delete("/api/burgers/:id", function(req, res) {
     }
   });
 });
-
-
-
-
-
-
 
 
 // Export routes for server.js to use

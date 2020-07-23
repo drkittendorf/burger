@@ -1,5 +1,5 @@
 const mysql = require('mysql');
-const util = require('util');
+// const util = require('util');
 require('dotenv').config();
 
 // create the connection information for the sql database
@@ -19,5 +19,5 @@ connection.connect(function(err) {
     console.log("connected as id " + connection.threadId);
 });
 
-connection.query = util.promisify(connection.query)
+// connection.query = util.promisify(connection.query)
 module.exports = connection
