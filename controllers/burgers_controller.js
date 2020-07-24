@@ -5,15 +5,12 @@ const express = require("express");
 //import the following: `burger.js` to use its database functions.
 const burger = require("../models/burger.js");
 const router = express.Router();
-// const app = express();
-// const hbs = require('express-handlebars');
-
 
 // Create all our routes and set up logic within those routes where required.
 router.get("/", function(req, res) {
   burger.all(function(data) {
     const hbsObject = {
-      burgers: data
+      burger: data
     };
     console.log(hbsObject);
     res.render("index", hbsObject);
@@ -21,13 +18,9 @@ router.get("/", function(req, res) {
 });
 
 router.post("/api/burgers", function(req, res) {
-  burger.create([
-    "name", "devoured"
-  ], [
-    req.body.name, req.body.devoured
-  ], function(result) {
-    // Send back the ID of the new quote
-    res.json({ id: result.insertId });
+  burger.create(req.body.burgerName, function (result) {
+    // Send back the ID of the new burger
+    res.redirect('/')
   });
 });
 

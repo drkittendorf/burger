@@ -4,16 +4,16 @@
  that Handlebars can render onto.
 * Create a button in `index.handlebars`
  that will submit the user input into the database. --}}
-{{>header}}
+
  <h1>Burgers!</h1>
 
 <h2>Eat your burgers and collect them too!</h2>
 
 <ul>
-    
   {{#each burger}}
     {{#unless devoured}}
-      {{> burger-block devoured=true}} //going to partials # signifies a helper
+<div>{{ this.name }}</div>
+      {{!-- {{> burgers/burger-block devoured=true}} //going to partials # signifies a helper --}}
     {{/unless}}
   {{/each}}
 </ul>
@@ -23,25 +23,37 @@
 <ul>
   {{#each burger}}
     {{#if devoured}}
-      {{> burgers/burger-block devoured=false}}
+<div>{{ this.name }}</div>    
+      {{!-- {{> burgers/burger-block devoured=false}} --}}
     {{/if}}
   {{/each}}
 </ul>
 
 <h2>Add a Burger</h2>
-<form class="create-form">
+<form class="create-form" method='POST'action="/api/burgers" >
 
   <div class="form-group">
     <label for="bn">Burger Name:</label>
-    <input type="text" id="bn" name="name">
+    <input type="text" id="bn" name="burgerName">
+    
   </div>
 
-  <div class="form-group">
+  {{!-- <div class="form-group">
     <label for="devoured">Devoured?</label><br>
     <input type="radio" name="devoured" value="1" checked> Devoured!<br>
     <input type="radio" name="devoured" value="0"> Fresh!
-  </div>
+  </div> --}}
 
   <button type="submit">Add Burger</button>
+
 </form>
-{{>footer}}
+
+<li>
+	{{name}}
+
+	<button class="change-devoured" data-id="{{id}}" data-newdevoured="{{devoured}}">
+		{{#if devoured}}Tasty Burger!{{else}}Grab a bite!{{/if}}
+	</button>
+
+	<button class="delete-burger" data-id="{{this.id}}">DELETE!</button>
+</li>

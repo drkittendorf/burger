@@ -10,11 +10,14 @@ app.use(express.json());
 
 
 //set static folder
-app.use(express.static("public"));
+app.use(express.static('public'));
+// app.use(express.static(path.join(__dirname, '/public'))); //trying this
 const routes = require('./controllers/burgers_controller.js');
 app.use(routes)
-app.engine("handlebars", exphbs({ defaultLayout: "main" }));
-app.set("view engine", "handlebars");
+app.engine('handlebars', exphbs({ 
+    defaultLayout: 'main' 
+}));
+app.set('view engine', 'handlebars');
 
 
 // Starts our server.

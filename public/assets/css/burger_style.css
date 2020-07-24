@@ -1,7 +1,18 @@
+ :root {
+    align-items: center;
+    text-align: center;
+    background-color: orange;
+ }
+
  li {
     padding: 5px;
     margin: 5px;
     background: #faebd7;
+  }
+
+  h1, h2 {
+  align-items: center;
+  text-align: center;
   }
   
   .label {
@@ -9,6 +20,7 @@
   }
   
   .create-update-form {
+    align-content: center;
     padding: 5px;
     margin: 5px;
     background: aqua;
@@ -16,5 +28,11 @@
   
   .form-group {
     margin-bottom: 5px;
+    text-align: center;
+    align-content: center;
   }
   
+ button {
+    border-radius: 2rem;
+
+}

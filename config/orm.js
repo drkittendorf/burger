@@ -2,7 +2,6 @@
 const connection = require("../config/connection.js");
 
 //    * In the `orm.js` file, create the methods that will execute the necessary MySQL commands in the controllers. These are the methods you will need to use in order to retrieve and store data in your database.
-
 function printQuestionMarks(num) {
     const arr = [];
   
@@ -27,7 +26,7 @@ function printQuestionMarks(num) {
           value = "'" + value + "'";
         }
         // e.g. {name: 'Lana Del Grey'} => ["name='Lana Del Grey'"]
-        // e.g. {sleepy: true} => ["sleepy=true"]
+        // e.g. {devoured: true} => ["devoured=true"]
         arr.push(key + "=" + value);
       }
     }
@@ -67,7 +66,7 @@ function printQuestionMarks(num) {
         cb(result);
       });
     },
-    // An example of objColVals would be {name: panther, sleepy: true}
+    // An example of objColVals would be {name: chili burger, devoured: true}
     //      * `updateOne()`
     update: function(table, objColVals, condition, cb) {
       const queryString = "UPDATE " + table;
