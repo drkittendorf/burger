@@ -9,14 +9,18 @@ const burger = {
       });
     },
     // The variables cols and vals are arrays.
-    create: function(newBurger, cb) {
-      orm.create("burgers",['name', 'devoured'],[newBurger, false] , cb) 
+    create: function(cols, vals, cb) {
+      orm.create("burgers",cols, vals, function(res) {
         cb(res);
+      }); 
     },
-    update: function(sandwich, condition, cb) {
-      orm.update("burgers",['name', 'devoured'],[sandwich, true], cb)
+
+    update: function(objColVals, condition, cb) {
+      orm.update('burgers', objColVals, condition, function(res) {
         cb(res);
-    },
+      });
+    },  
+      
     delete: function(condition, cb) {
       orm.delete("burgers", condition, function(res) {
         cb(res);

@@ -2,19 +2,19 @@
 const connection = require("../config/connection.js");
 
 //    * In the `orm.js` file, create the methods that will execute the necessary MySQL commands in the controllers. These are the methods you will need to use in order to retrieve and store data in your database.
-function printQuestionMarks(num) {
-    const arr = [];
+// function printQuestionMarks(num) {
+//     const arr = [];
   
-    for (let i = 0; i < num; i++) {
-      arr.push("?");
-    }
+//     for (let i = 0; i < num; i++) {
+//       arr.push("?");
+//     }
   
-    return arr.toString();
-  }
+//     return arr.toString();
+//   }
   
   // Helper function to convert object key/value pairs to SQL syntax
   function objToSql(ob) {
-    const arr = [];
+    let arr = [];
   
     // loop through the keys and push the key/value as a string int arr
     for (let key in ob) {
@@ -30,36 +30,39 @@ function printQuestionMarks(num) {
         arr.push(key + "=" + value);
       }
     }
-  
-    // translate array of strings to a single comma-separated string
+      // translate array of strings to a single comma-separated string
     return arr.toString();
   }
   //      * `selectAll()`
   // Object for all our SQL statement functions.
   let orm = {
     all: function(tableInput, cb) {
-      const queryString = "SELECT * FROM " + tableInput + ";";
+      let queryString = "SELECT * FROM " + tableInput + ";";
       connection.query(queryString, function(err, result) {
         if (err) {
+            console.log(err)
           throw err;
         }
         cb(result);
       });
     },
+
+
     create: function(table, cols, vals, cb) {
-     const queryString = " INSERT INTO " + table; //     * `insertOne()`
+     let queryString = 'INSERT INTO' + table; //     * `insertOne()`
   
-      queryString += " (";
+      queryString += ' (';
       queryString += cols.toString();
-      queryString += ") ";
-      queryString += "VALUES (";
-      queryString += printQuestionMarks(vals.length);
-      queryString += ") ";
+      queryString += ') ';
+      queryString += 'VALUES (';
+      queryString += `${vals.toString()}`;
+      queryString += ');';
   
       console.log(queryString);
   
       connection.query(queryString, vals, function(err, result) {
         if (err) {
+            console.log(err)
           throw err;
         }
   
@@ -69,8 +72,8 @@ function printQuestionMarks(num) {
     // An example of objColVals would be {name: chili burger, devoured: true}
     //      * `updateOne()`
     update: function(table, objColVals, condition, cb) {
-      const queryString = " UPDATE " + table;
-  
+      let queryString = "UPDATE " + table;
+      
       queryString += " SET ";
       queryString += objToSql(objColVals);
       queryString += " WHERE ";
@@ -79,6 +82,7 @@ function printQuestionMarks(num) {
       console.log(queryString);
       connection.query(queryString, function(err, result) {
         if (err) {
+            console.log(err)
           throw err;
         }
   
@@ -86,15 +90,15 @@ function printQuestionMarks(num) {
       });
     },
     delete: function(table, condition, cb) {
-      const queryString = "DELETE FROM " + table;
+      let queryString = "DELETE FROM " + table;
       queryString += " WHERE ";
       queryString += condition;
   
       connection.query(queryString, function(err, result) {
-        if (err) {
+        if (err)  {
+            console.log(err)
           throw err;
         }
-  
         cb(result);
       });
     }

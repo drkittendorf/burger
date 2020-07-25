@@ -1,5 +1,6 @@
-// Make sure we wait to attach our handlers until the DOM is fully loaded.
-$(function() {
+$(document).ready(function () {
+    // Make sure we wait to attach our handlers until the DOM is fully loaded.
+    $(function() {
     $(".change-devoured").on("click", function(event) {
       const id = $(this).data("id");
       const newDevoured = $(this).data("newdevoured");
@@ -56,5 +57,5 @@ $(function() {
         }
       );
     });
-  });
-  
+  })
+});
