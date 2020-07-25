@@ -47,7 +47,7 @@ function printQuestionMarks(num) {
       });
     },
     create: function(table, cols, vals, cb) {
-     const queryString = "INSERT INTO " + table; //     * `insertOne()`
+     const queryString = " INSERT INTO " + table; //     * `insertOne()`
   
       queryString += " (";
       queryString += cols.toString();
@@ -69,7 +69,7 @@ function printQuestionMarks(num) {
     // An example of objColVals would be {name: chili burger, devoured: true}
     //      * `updateOne()`
     update: function(table, objColVals, condition, cb) {
-      const queryString = "UPDATE " + table;
+      const queryString = " UPDATE " + table;
   
       queryString += " SET ";
       queryString += objToSql(objColVals);

@@ -5,55 +5,56 @@
 * Create a button in `index.handlebars`
  that will submit the user input into the database. --}}
 
- <h1>Burgers!</h1>
-
-<h2>Eat your burgers and collect them too!</h2>
-
-<ul>
-  {{#each burger}}
-    {{#unless devoured}}
-<div>{{ this.name }}</div>
-      {{!-- {{> burgers/burger-block devoured=true}} //going to partials # signifies a helper --}}
-    {{/unless}}
-  {{/each}}
-</ul>
-
-<h2>Burgers that are devoured!</h2>
-
-<ul>
-  {{#each burger}}
-    {{#if devoured}}
-<div>{{ this.name }}</div>    
-      {{!-- {{> burgers/burger-block devoured=false}} --}}
-    {{/if}}
-  {{/each}}
-</ul>
-
-<h2>Add a Burger</h2>
-<form class="create-form" method='POST'action="/api/burgers" >
-
-  <div class="form-group">
-    <label for="bn">Burger Name:</label>
-    <input type="text" id="bn" name="burgerName">
-    
-  </div>
-
-  {{!-- <div class="form-group">
-    <label for="devoured">Devoured?</label><br>
-    <input type="radio" name="devoured" value="1" checked> Devoured!<br>
-    <input type="radio" name="devoured" value="0"> Fresh!
-  </div> --}}
-
-  <button type="submit">Add Burger</button>
-
-</form>
-
-<li>
-	{{name}}
-
-	<button class="change-devoured" data-id="{{id}}" data-newdevoured="{{devoured}}">
+<div class="row">
+<h1>Burgers!!! Eat your burgers and collect them too...</h1>
+    <div class="col">
+<h2>Burgers You'd Like to Devour!</h2>
+        <ul>
+        {{#each burger}}
+        {{#unless devoured}}
+        <div class='fresh'>{{ this.name }} 
+            <button class="change-devoured" data-id="{{this.id}}" data-newdevoured="{{this.devoured}}">
 		{{#if devoured}}Tasty Burger!{{else}}Grab a bite!{{/if}}
-	</button>
+	        </button>
+        </div>
+        {{/unless}}
+        {{/each}}
+        </ul>
+    </div>
 
-	<button class="delete-burger" data-id="{{this.id}}">DELETE!</button>
-</li>
+    <div class="col">  
+<h2>Burgers that have been devoured!</h2>
+        <ul>
+        {{#each burger}}
+        {{#if devoured}}
+        <div class='devoured'>{{ this.name }}  
+    <button  class="delete-burger" data-id="{{ this.id }}">DEE-LETE!
+    </button> 
+    </div>    
+        {{/if}}
+        {{/each}}
+        </ul>
+    </div>
+
+</div>
+
+<div class="row">     
+<h2>Add a Burger to the to Eat List</h2>
+<form class="create-form" method='POST'action="/api/burgers" >
+  <div class="form-group">
+    <label for="nb">Burger Name:</label>
+    <input type="text" id="nb" name="burgerName">
+  </div>
+  <button type="submit">Add Burger</button>
+</form>
+</div>
+
+
+
+
+
+
+
+	
+
+	

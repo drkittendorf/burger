@@ -1,19 +1,42 @@
- :root {
+:root {
     align-items: center;
     text-align: center;
     background-color: orange;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 2 rem;
  }
 
- li {
+#burgerPic {
+    border-radius: 2rem;
+}
+
+.fresh{
+   color:green;
+   font-weight: bold;
+   font-size: 2.25rem;
+}
+
+.devoured {
+   color: black;
+   font-size: 2.15rem;
+   font-style: italic;
+}
+
+li {
+    font-size: 1.5rem;
     padding: 5px;
     margin: 5px;
-    background: #faebd7;
-  }
+}
+    
+h1 {
+    text-shadow: pink;
+    color: wheat;
+}
 
   h1, h2 {
   align-items: center;
   text-align: center;
-  }
+}
   
   .label {
     font-weight: bold;
@@ -33,6 +56,9 @@
   }
   
  button {
+    margin: .25rem;
+    padding: .25rem;
     border-radius: 2rem;
+    border: .25rem;
 
 }

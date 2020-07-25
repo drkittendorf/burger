@@ -9,14 +9,13 @@ const burger = {
       });
     },
     // The variables cols and vals are arrays.
-    create: function(sandwich, cb) {
-      orm.create("burgers",['name', 'devoured'],[sandwich, false] , cb) 
+    create: function(newBurger, cb) {
+      orm.create("burgers",['name', 'devoured'],[newBurger, false] , cb) 
         cb(res);
     },
-    update: function(objColVals, condition, cb) {
-      orm.update("burgers", objColVals, condition, function(res) {
+    update: function(sandwich, condition, cb) {
+      orm.update("burgers",['name', 'devoured'],[sandwich, true], cb)
         cb(res);
-      });
     },
     delete: function(condition, cb) {
       orm.delete("burgers", condition, function(res) {
@@ -27,4 +26,4 @@ const burger = {
  
 // * Export at the end of the `burger.js` file.
 module.exports = burger;
-console.log( ['name', 'devoured'].toString())
+// console.log( ['name', 'devoured'].toString())
