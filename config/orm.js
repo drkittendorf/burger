@@ -49,13 +49,13 @@ const connection = require("../config/connection.js");
 
 
     create: function(table, cols, vals, cb) {
-     let queryString = 'INSERT INTO' + table; //     * `insertOne()`
+     let queryString = 'INSERT INTO ' + table; //     * `insertOne()`
   
       queryString += ' (';
       queryString += cols.toString();
       queryString += ') ';
       queryString += 'VALUES (';
-      queryString += `${vals.toString()}`;
+      queryString += `'${vals.toString()}'`;
       queryString += ');';
   
       console.log(queryString);
@@ -73,7 +73,7 @@ const connection = require("../config/connection.js");
     //      * `updateOne()`
     update: function(table, objColVals, condition, cb) {
       let queryString = "UPDATE " + table;
-      
+
       queryString += " SET ";
       queryString += objToSql(objColVals);
       queryString += " WHERE ";
