@@ -7,7 +7,7 @@ require('dotenv').config();
 
 if (process.env.JAWSDB_URL) {
     connection = mysql.createConnection(process.env.JAWSDB_URL)
-}else {
+} else {
     const connection = mysql.createConnection({
         host: "localhost",
         // Your port; if not 3306

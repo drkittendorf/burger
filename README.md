@@ -3,7 +3,7 @@
 ## App URL
 https://drkittendorf.github.io/13-burger <br>
 https://github.com/drkittendorf/13-burger <br>
-ADD HEROKU LINK HERE
+https://safe-dusk-58943.herokuapp.com/
 
 
 # USER STORY
@@ -18,7 +18,7 @@ A burger logger with MySQL, Node, Express, Handlebars and a homemade ORM. Follow
 
 ## Application Screenshots
 
-
+![image] (assets\img\Screenshot.png)
 
 ## Questions
 https://github.com/drkittendorf
