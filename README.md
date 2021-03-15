@@ -1,13 +1,11 @@
 ## DALES BURGER APP
 
 
-# USER STORY
-As a serious burger connoisseur<br>
-I want to be able to view and devour a variety of burgers<br>
-SO THAT I can organize my burgers and keep track of the burgers I have devoured and have yet to devour<br>
+
 ## TABLE OF CONTENTS
 
 - [CONTRIBUTORS](#CONTRIBUTORS)
+- [USER STORY](#USER-STORY)
 - [DESCRIPTION](#DESCRIPTION)
 - [REFERENCE LINKS](#REFERENCE-LINKS)
   - [Dale's Burger  Application :: Live Link](https://safe-dusk-58943.herokuapp.com/)
@@ -22,6 +20,16 @@ SO THAT I can organize my burgers and keep track of the burgers I have devoured 
 ---
 ## CONTRIBUTORS
 Dale Kittendorf
+
+<br>
+
+---
+
+## USER STORY
+
+- As a serious burger connoisseur
+- I want to be able to view and devour a variety of burgers
+- SO THAT I can organize my burgers and keep track of the burgers I have devoured and thos I have yet to devour
 
 <br>
 
