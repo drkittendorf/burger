@@ -9,7 +9,7 @@
 - [DESCRIPTION](#DESCRIPTION)
 - [REFERENCE LINKS](#REFERENCE-LINKS)
   - [Dale's Burger  Application :: Live Link](https://safe-dusk-58943.herokuapp.com/)
-  - [Dale's Burger Application :: GitHub Repo](https://github.com/drkittendorf/13-burger)
+  - [Dale's Burger Application :: GitHub Repo](https://github.com/drkittendorf/burger)
 - [LANGUAGES AND TOOLS](#LANGUAGES-AND-TOOLS)
 - [CORE PROJECT TECHNOLOGIES](#CORE-PROJECT-TECHNOLOGIES)
 - [CORE NODE DEPENDENCIES](#CORE-NODE-DEPENDENCIES)
@@ -45,9 +45,9 @@ A burger logger with MySQL, Node, Express, Handlebars and a homemade ORM. Follow
 
 ## REFERENCE LINKS
 
-Link to **Dale's Burger App** deployed on `HEROKU` - [Application Live Link](https://drkittendorf.github.io/productivity/)
+Link to **Dale's Burger App** deployed on `HEROKU` - [Application Live Link](https://safe-dusk-58943.herokuapp.com/)
 
-Link to **GitHub Repo** used for application development - [Application GitHub Repo](https://github.com/drkittendorf/productivity)
+Link to **GitHub Repo** used for application development - [Application GitHub Repo](https://github.com/drkittendorf/burger)
 
 <br>
 
