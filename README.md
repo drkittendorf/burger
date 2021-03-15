@@ -58,7 +58,6 @@ Link to **GitHub Repo** used for application development - [Application GitHub R
 <img align="left" alt="HTML5" width="26px" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/html/html.png" />
 <img align="left" alt="CSS3" width="26px" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/css/css.png" />
 <img align="left" alt="JavaScript" width="26px" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/javascript/javascript.png" />
-<img align="left" alt="React" width="26px" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/react/react.png" />
 <img align="left" alt="Node.js" width="26px" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/nodejs/nodejs.png" />
 <img align="left" alt="GitHub" width="26px" src="https://raw.githubusercontent.com/github/explore/78df643247d429f6cc873026c0622819ad797942/topics/github/github.png" />
 
@@ -71,15 +70,13 @@ Link to **GitHub Repo** used for application development - [Application GitHub R
 
 Here is a list of all the core technologies used to develop this application.
 
-- `React.js - A JavaScript library for building user interfaces`
-- `Node.js - An asynchronous event-driven JavaScript runtime`
+- `mysql`
 
 ### CORE NODE DEPENDENCIES
 
 The dependencies listed below are all the core NPM packages used throughout the project.
 
-- `react-dom` - This package serves as the entry point to the DOM and server renderers for React.
-- `react-bootstrap` - Bootstrap 4 components built with React.
+- 
 - 
 
 <br>
